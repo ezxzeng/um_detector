@@ -41,7 +41,7 @@ A 2 second sliding window can be used to create many 2 second audio clips. They 
 
 question: what should I do for 2 second segments which contains a part of a filler word?
 
-- 
+Decision: if it lasts longer than a second or is more than 90% of the original filler section, then it's a filler
 
 ### train val split
 
