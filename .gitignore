@@ -6,3 +6,6 @@ datasets/vocalizationcorpus
 datasets/vocalizationcorpus/*
 .idea
 .idea/*
+/demo/
+/demo/*
+/demo.wav

@@ -30,8 +30,8 @@ def label_wav(wav, labels_list, input_name, output_name, how_many_labels):
     with open(wav, 'rb') as wav_file:
         wav_data = wav_file.read()
 
-    label = run_graph(wav_data, labels_list, input_name, output_name, how_many_labels)
-    return label
+    label, score = run_graph(wav_data, labels_list, input_name, output_name, how_many_labels)
+    return label, score
 
 
 def main(_):
@@ -41,9 +41,10 @@ def main(_):
     wav_paths = glob.glob(os.path.join(FLAGS.wav_folder, "*.wav"))
 
     for wav in wav_paths:
-        print(wav)
-        label = label_wav(wav, labels_list, FLAGS.input_name,
+        label, score = label_wav(wav, labels_list, FLAGS.input_name,
                   FLAGS.output_name, FLAGS.how_many_labels)
+
+        print(f"{wav} \t {label}: {score}")
 
 
 if __name__ == '__main__':
